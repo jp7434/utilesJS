@@ -1,0 +1,79 @@
+/**
+ * Show Modals Sideways (Left/Right)
+ * Left modal: left_modal
+ * Right modal: right_modal
+ * To control the width of the modal, in the "modal-dialog-lateral" class div you have to add the style max-width: {width percentage}
+ * Example: <div id="modal" class="modal left_modal fade"> | <div id="modal" class="modal right_modal fade">
+            <div class="modal-dialog modal-dialog-lateral" style="max-width: 29%">
+*/
+
+.modal.left_modal, .modal.right_modal{
+    position: fixed;
+    z-index: 9999;
+}
+
+.modal.left_modal .modal-dialog-lateral,
+.modal.right_modal .modal-dialog-lateral {
+    position: fixed;
+    margin: auto;
+    width: 50%;
+    height: 100%;
+    -webkit-transform: translate3d(0%, 0, 0);
+        -ms-transform: translate3d(0%, 0, 0);
+        -o-transform: translate3d(0%, 0, 0);
+            transform: translate3d(0%, 0, 0);
+}
+
+.modal-dialog-lateral {
+    margin: 1.75rem auto;
+}
+
+@media (min-width: 576px){
+    .left_modal .modal-dialog-lateral {
+        max-width: 100%;
+    }
+
+    .right_modal .modal-dialog-lateral {
+        max-width: 100%;
+    }
+}
+
+.modal.left_modal .modal-content,
+.modal.right_modal .modal-content {
+    height: 100vh !important;
+}
+
+.modal.left_modal .modal-body,
+.modal.right_modal .modal-body {
+    padding: 15px 15px 30px;
+}
+
+/*Left*/
+.modal.left_modal.fade .modal-dialog-lateral{
+    left: -50%;
+    -webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
+    -moz-transition: opacity 0.3s linear, left 0.3s ease-out;
+    -o-transition: opacity 0.3s linear, left 0.3s ease-out;
+    transition: opacity 0.3s linear, left 0.3s ease-out;
+}
+
+.modal.left_modal.fade.show .modal-dialog-lateral{
+    left: 0;
+    box-shadow: 0px 0px 19px 
+    rgba(0,0,0,.5);
+}
+
+/*Right*/
+.modal.right_modal.fade .modal-dialog-lateral {
+    right: -50%;
+    -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+    -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+    -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+        transition: opacity 0.3s linear, right 0.3s ease-out;
+}
+
+.modal.right_modal.fade.show .modal-dialog-lateral {
+    right: 0;
+    box-shadow: 0px 0px 19px 
+    rgba(0,0,0,.5);
+}

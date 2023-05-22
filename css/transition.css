@@ -1,0 +1,11 @@
+.divTransition {
+    transition: opacity 0.5s ease;
+}
+
+.divHide {
+    opacity: 0;
+}
+
+.divShow {
+    opacity: 1;
+}

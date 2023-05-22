@@ -1,0 +1,27 @@
+/**
+ * Scroll en table y thead estático
+ * height: tamaño de tabla y scroll   
+*/
+
+.tableFixHead {
+    overflow: auto;
+    height: 400px;
+}
+
+.tableFixHead thead th {
+    position: sticky;
+    top: 0;
+    z-index: 3; /* número según pantalla */
+    background: #fff;
+}
+
+/**
+ * Centrar items en un td de una tabla
+*/
+
+.center-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: none;
+}
